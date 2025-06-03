@@ -9,7 +9,7 @@ db.init_app(app)
 
 with app.app_context():
     db.create_all()
-    # Создаем предметы, если их нет
+   
     if Subject.query.count() == 0:
         subjects = [Subject(name='Математика'), Subject(name='Физика'), Subject(name='История')]
         db.session.add_all(subjects)
